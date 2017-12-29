@@ -14,13 +14,11 @@ app.post('/webhook', (req, res, next) => {
 	let tag = parseInt(req.body.result.parameters.tags);
 	let message = wordpress.getPosts(tag);
 	
-	console.log(message);
-//	
-//	res.send({
-//		speech: message,
-//		displayText: message,
-//		source: 'wp-webhook',
-//	});
+	res.send({
+		speech: message,
+		displayText: message,
+		source: 'wp-webhook',
+	});
 	
 });
 
