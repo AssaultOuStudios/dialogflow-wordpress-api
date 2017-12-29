@@ -22,8 +22,8 @@ app.post('/webhook', (req, res, next) => {
 			});
 		} else {
 		  	res.status(200).send({
-				speech: '',
-				displayText: '',
+				speech: 'Sure, here are some helpful articles',
+				displayText: 'Sure, here are some helpful articles',
 				source: 'wp-webhook',
 				messages: postContent
 			});
