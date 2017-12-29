@@ -6,7 +6,7 @@ const port = process.env.PORT || 3100;
 let app = express();
 app.use(bodyParser.json());
 
-app.post('/', (req, res, next) => {
+app.post('/webhook', (req, res, next) => {
 	
 	let action = req.body.result.action;
 	let message = action === 'get.wp.content' ? `Hey, our webhook is connected!` : `Sorry, I didn't get that`;
