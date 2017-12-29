@@ -25,6 +25,11 @@ app.post('/webhook', (req, res, next) => {
 				speech: 'Sure, here are some helpful articles',
 				displayText: 'Sure, here are some helpful articles',
 				source: 'wp-webhook',
+				data: {
+				  facebook: {
+					text: 'Sure, here are some helpful articles'
+				  }
+				},
 				messages: postContent
 			});
 		}
