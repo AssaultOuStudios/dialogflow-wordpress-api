@@ -11,13 +11,23 @@ app.use(bodyParser.json());
 app.post('/webhook', (req, res, next) => {
 	
 	let action = req.body.result.action;
-	let tag = parseInt(req.body.result.parameters.tags);
-	let message = wordpress.getPosts(tag);
+	let tag = req.body.result.parameters.tags;
 	
-	res.send({
-		speech: message,
-		displayText: message,
-		source: 'wp-webhook',
+	wordpress.getPosts(tag, (errorMessage, postContent) => {
+		if (errorMessage) {
+	  		res.status(400).send({
+				speech: errorMessage,
+				displayText: errorMessage,
+				source: 'wp-webhook',
+			});
+		} else {
+		  	res.status(200).send({
+				speech: '',
+				displayText: '',
+				source: 'wp-webhook',
+				messages: postContent
+			});
+		}
 	});
 	
 });
