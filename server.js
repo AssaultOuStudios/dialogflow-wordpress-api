@@ -12,7 +12,7 @@ app.post('/webhook', (req, res, next) => {
 	
 	let action = req.body.result.action;
 	let tag = req.body.result.parameters.tags;
-	
+
 	wordpress.getPosts(tag, (errorMessage, postContent) => {
 		if (errorMessage) {
 	  		res.status(400).send({
@@ -29,7 +29,7 @@ app.post('/webhook', (req, res, next) => {
 			});
 		}
 	});
-	
+
 });
 
 app.listen(port, () => {
