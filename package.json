@@ -1,5 +1,5 @@
 {
-  "name": "node-gulp-starter",
+  "name": "dialogflow-wordpress-api",
   "version": "0.1.0",
   "description": "An unopinionated Node.js app skeleton and gulpfile",
   "private": true,

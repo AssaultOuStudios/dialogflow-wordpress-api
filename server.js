@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 // Imports
-const chatbase = require(__dirname + '/lib/chatbase/chatbase');
+//const chatbase = require(__dirname + '/lib/chatbase/chatbase');
 
 // Set port for server
 const port = process.env.PORT || 3100;
